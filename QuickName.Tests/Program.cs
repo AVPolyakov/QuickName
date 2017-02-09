@@ -11,7 +11,9 @@ namespace QuickName.Tests
             Console.WriteLine(
                 $"{metadata.GetProperyName(_ => _.A001)} " +
                 $"{metadata.GetProperyName(_ => _.A002)} " +
-                $"{metadata.GetProperyName(_ => _.A003)}");
+                $"{metadata.GetProperyName(_ => _.A003)} " +
+                $"{QuickName.GetProperyInfo(() => My3.A011).Name} " +
+                $"{QuickName.GetProperyInfo(() => My3.A012).Name}");
         }
     }
 
@@ -24,6 +26,12 @@ namespace QuickName.Tests
 
     public class My2
     {
+    }
+
+    public class My3
+    {
+        public static string A011 { get; set; }
+        public static int A012 { get; set; }
     }
 
     public class Metadata<T>
